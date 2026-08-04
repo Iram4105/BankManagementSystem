@@ -3,7 +3,9 @@ package com.bank.enums;
 public enum AccountStatus {
 
     ACTIVE,
-    BLOCKED,
+  //  BLOCKED,
+    FROZEN,
+
     CLOSED
 
 }

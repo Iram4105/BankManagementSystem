@@ -1,28 +1,36 @@
 package com.bank.service.impl;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.dto.TransactionRequest;
 import com.bank.dto.TransactionResponse;
 import com.bank.entity.Account;
 import com.bank.entity.Transaction;
+import com.bank.enums.TransactionType;
+import com.bank.exception.AccountNotFoundException;
+import com.bank.exception.InsufficientBalanceException;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.TransactionRepository;
 import com.bank.service.TransactionService;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
-import com.bank.enums.TransactionType;
-import com.bank.exception.InsufficientBalanceException;
-import com.bank.exception.AccountNotFoundException;
-
+import com.bank.enums.AccountStatus;
+import com.bank.exception.AccountFrozenException;
+import com.bank.exception.InvalidAmountException;
+import com.bank.exception.SameAccountTransferException;
 
 @Service
 public class TransactionServiceImpl implements TransactionService {
+
+    private static final Logger logger =
+            LoggerFactory.getLogger(TransactionServiceImpl.class);
 
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
@@ -35,21 +43,24 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public TransactionResponse deposit(TransactionRequest request) {
 
-        // Find Account
-        Account account = accountRepository.findByAccountNumber(request.getAccountNumber())
-                .orElseThrow(() -> new RuntimeException("Account not found"));
+        logger.info("Deposit request received. Account: {}, Amount: {}",
+                request.getAccountNumber(),
+                request.getAmount());
+        validateAmount(request.getAmount());
 
-        // Increase Balance
+        Account account = accountRepository
+                .findByAccountNumber(request.getAccountNumber())
+                .orElseThrow(() ->
+                        new AccountNotFoundException(request.getAccountNumber()));
+        validateAccountStatus(account);
+        
         account.setBalance(account.getBalance().add(request.getAmount()));
-
-        // Save Updated Account
         accountRepository.save(account);
 
-        // Create Transaction
         Transaction transaction = new Transaction();
-
         transaction.setTransactionNumber(generateTransactionNumber());
         transaction.setTransactionType(TransactionType.DEPOSIT);
         transaction.setAmount(request.getAmount());
@@ -59,25 +70,42 @@ public class TransactionServiceImpl implements TransactionService {
 
         transactionRepository.save(transaction);
 
+        logger.info(
+                "Deposit successful. Transaction: {}, Account: {}, Amount: {}",
+                transaction.getTransactionNumber(),
+                account.getAccountNumber(),
+                request.getAmount());
+
         return mapToResponse(transaction, "Amount deposited successfully");
     }
+
     @Override
+    @Transactional
     public TransactionResponse withdraw(TransactionRequest request) {
 
-        Account account = accountRepository.findByAccountNumber(request.getAccountNumber())
-                .orElseThrow(() -> new AccountNotFoundException(request.getAccountNumber()));
-        // Check Balance
+        logger.info("Withdrawal request received. Account: {}, Amount: {}",
+                request.getAccountNumber(),
+                request.getAmount());
+        validateAmount(request.getAmount());
+        
+        Account account = accountRepository
+                .findByAccountNumber(request.getAccountNumber())
+                .orElseThrow(() ->
+                        new AccountNotFoundException(request.getAccountNumber()));
+        validateAccountStatus(account);
+        
         if (account.getBalance().compareTo(request.getAmount()) < 0) {
-            throw new RuntimeException("Insufficient balance");
+
+            logger.warn("Withdrawal failed due to insufficient balance. Account: {}",
+                    account.getAccountNumber());
+
+            throw new InsufficientBalanceException();
         }
 
-        // Deduct Balance
         account.setBalance(account.getBalance().subtract(request.getAmount()));
-
         accountRepository.save(account);
 
         Transaction transaction = new Transaction();
-
         transaction.setTransactionNumber(generateTransactionNumber());
         transaction.setTransactionType(TransactionType.WITHDRAW);
         transaction.setAmount(request.getAmount());
@@ -87,28 +115,61 @@ public class TransactionServiceImpl implements TransactionService {
 
         transactionRepository.save(transaction);
 
+        logger.info(
+                "Withdrawal successful. Transaction: {}, Amount: {}",
+                transaction.getTransactionNumber(),
+                request.getAmount());
+
         return mapToResponse(transaction, "Amount withdrawn successfully");
     }
 
     @Override
+    @Transactional
     public TransactionResponse transfer(TransactionRequest request) {
 
-        Account sourceAccount = accountRepository.findByAccountNumber(request.getAccountNumber())
-                .orElseThrow(() -> new AccountNotFoundException(request.getAccountNumber()));
-        Account destinationAccount = accountRepository.findByAccountNumber(request.getDestinationAccountNumber())
-                .orElseThrow(() ->  new AccountNotFoundException(request.getDestinationAccountNumber()));
+        logger.info(
+                "Transfer request. From: {}, To: {}, Amount: {}",
+                request.getAccountNumber(),
+                request.getDestinationAccountNumber(),
+                request.getAmount());
+        validateAmount(request.getAmount());
+
+        Account sourceAccount = accountRepository
+                .findByAccountNumber(request.getAccountNumber())
+                .orElseThrow(() ->
+                        new AccountNotFoundException(request.getAccountNumber()));
+
+        Account destinationAccount = accountRepository
+                .findByAccountNumber(request.getDestinationAccountNumber())
+                .orElseThrow(() ->
+                        new AccountNotFoundException(
+                                request.getDestinationAccountNumber()));
+        validateAccountStatus(sourceAccount);
+        validateAccountStatus(destinationAccount);
+
+        validateTransfer(sourceAccount, destinationAccount);
+
         if (sourceAccount.getBalance().compareTo(request.getAmount()) < 0) {
-        	throw new InsufficientBalanceException();
+
+            logger.warn(
+                    "Transfer failed due to insufficient balance. Source Account: {}",
+                    sourceAccount.getAccountNumber());
+
+            throw new InsufficientBalanceException();
+        }
+
         // Update balances
-        sourceAccount.setBalance(sourceAccount.getBalance().subtract(request.getAmount()));
-        destinationAccount.setBalance(destinationAccount.getBalance().add(request.getAmount()));
+        sourceAccount.setBalance(
+                sourceAccount.getBalance().subtract(request.getAmount()));
+
+        destinationAccount.setBalance(
+                destinationAccount.getBalance().add(request.getAmount()));
 
         accountRepository.save(sourceAccount);
         accountRepository.save(destinationAccount);
 
         // Record transaction
         Transaction transaction = new Transaction();
-
         transaction.setTransactionNumber(generateTransactionNumber());
         transaction.setTransactionType(TransactionType.TRANSFER);
         transaction.setAmount(request.getAmount());
@@ -117,22 +178,37 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setRemarks(request.getRemarks());
 
         transactionRepository.save(transaction);
-        
+
+        logger.info(
+                "Transfer successful. Transaction: {}, From: {}, To: {}, Amount: {}",
+                transaction.getTransactionNumber(),
+                sourceAccount.getAccountNumber(),
+                destinationAccount.getAccountNumber(),
+                request.getAmount());
+
         return mapToResponse(transaction, "Amount transferred successfully");
     }
- 
+
     @Override
     public List<TransactionResponse> getTransactionHistory(String accountNumber) {
 
-        Account account = accountRepository.findByAccountNumber(accountNumber)
-                .orElseThrow(() -> new RuntimeException("Account not found"));
+        logger.info("Fetching transaction history for account: {}",
+                accountNumber);
+
+        Account account = accountRepository
+                .findByAccountNumber(accountNumber)
+                .orElseThrow(() ->
+                        new AccountNotFoundException(accountNumber));
 
         return transactionRepository.findByAccount(account)
                 .stream()
-                .map(transaction -> mapToResponse(transaction, "Success"))
+                .map(transaction ->
+                        mapToResponse(transaction, "Success"))
                 .toList();
     }
- // Generate Unique Transaction Number
+
+    // ================= Helper Methods =================
+
     private String generateTransactionNumber() {
 
         Random random = new Random();
@@ -140,13 +216,38 @@ public class TransactionServiceImpl implements TransactionService {
         String transactionNumber;
 
         do {
-            transactionNumber = "TXN" + (100000000L + random.nextInt(900000000));
-        } while (transactionRepository.findByTransactionNumber(transactionNumber).isPresent());
+            transactionNumber =
+                    "TXN" + (100000000L + random.nextInt(900000000));
+        } while (transactionRepository
+                .findByTransactionNumber(transactionNumber)
+                .isPresent());
 
         return transactionNumber;
     }
+    private void validateTransfer(Account source,
+            Account destination) {
 
-    // Convert Entity to DTO
+          if (source.getAccountNumber()
+                   .equals(destination.getAccountNumber())) {
+
+              throw new SameAccountTransferException();
+        }
+    }
+    private void validateAccountStatus(Account account) {
+
+        if (account.getStatus() == AccountStatus.FROZEN
+                || account.getStatus() == AccountStatus.CLOSED) {
+
+            throw new AccountFrozenException(account.getAccountNumber());
+        }
+    }
+    private void validateAmount(BigDecimal amount) {
+
+        if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new InvalidAmountException();
+        }
+    }
+
     private TransactionResponse mapToResponse(
             Transaction transaction,
             String message) {
@@ -160,5 +261,4 @@ public class TransactionServiceImpl implements TransactionService {
                 message
         );
     }
-
 }

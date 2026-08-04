@@ -3,9 +3,11 @@ package com.bank.util;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-public class SecurityUtils {
+import com.bank.security.CustomUserDetails;
 
-    private SecurityUtils() {
+public class SecurityUtil {
+
+    private SecurityUtil() {
     }
 
     public static String getLoggedInUserEmail() {
@@ -14,9 +16,12 @@ public class SecurityUtils {
                 SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            throw new RuntimeException("User is not authenticated");
+            return null;
         }
 
-        return authentication.getName();
+        CustomUserDetails userDetails =
+                (CustomUserDetails) authentication.getPrincipal();
+
+        return userDetails.getUsername();
     }
 }

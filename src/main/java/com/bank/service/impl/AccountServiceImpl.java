@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.bank.dto.AccountRequest;
@@ -12,18 +14,25 @@ import com.bank.dto.AccountResponse;
 import com.bank.entity.Account;
 import com.bank.entity.User;
 import com.bank.enums.AccountStatus;
+import com.bank.exception.AccountNotFoundException;
+import com.bank.exception.UserNotFoundException;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.UserRepository;
 import com.bank.service.AccountService;
-import com.bank.util.SecurityUtils;
+import com.bank.util.SecurityUtil;
+
 @Service
 public class AccountServiceImpl implements AccountService {
+
+    private static final Logger logger =
+            LoggerFactory.getLogger(AccountServiceImpl.class);
 
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;
 
     public AccountServiceImpl(AccountRepository accountRepository,
                               UserRepository userRepository) {
+
         this.accountRepository = accountRepository;
         this.userRepository = userRepository;
     }
@@ -31,11 +40,18 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public AccountResponse createAccount(AccountRequest request) {
 
-        // Temporary: Get first registered user
-    	String email = SecurityUtils.getLoggedInUserEmail();
+        String email = SecurityUtil.getLoggedInUserEmail();
 
-    	User user = userRepository.findByEmail(email)
-    	        .orElseThrow(() -> new RuntimeException("User not found"));
+        logger.info("Account creation request received for user: {}", email);
+
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> {
+
+                    logger.error("User not found: {}", email);
+
+                    return new UserNotFoundException(email);
+                });
+
         Account account = new Account();
 
         account.setAccountNumber(generateAccountNumber());
@@ -46,11 +62,18 @@ public class AccountServiceImpl implements AccountService {
 
         accountRepository.save(account);
 
+        logger.info(
+                "Account created successfully. Account Number: {}, Customer: {}",
+                account.getAccountNumber(),
+                user.getEmail());
+
         return mapToResponse(account);
     }
 
     @Override
     public List<AccountResponse> getAllAccounts() {
+
+        logger.info("Fetching all bank accounts");
 
         return accountRepository.findAll()
                 .stream()
@@ -61,13 +84,23 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public AccountResponse getAccountById(Long id) {
 
+        logger.info("Fetching account with ID: {}", id);
+
         Account account = accountRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Account not found"));
+                .orElseThrow(() -> {
+
+                    logger.warn("Account not found with ID: {}", id);
+
+                    return new AccountNotFoundException(String.valueOf(id));
+                });
+
+        logger.info("Account retrieved successfully: {}",
+                account.getAccountNumber());
 
         return mapToResponse(account);
     }
 
-    // ---------------- Helper Methods ----------------
+    // ================= Helper Methods =================
 
     private String generateAccountNumber() {
 
@@ -76,7 +109,10 @@ public class AccountServiceImpl implements AccountService {
         String accountNumber;
 
         do {
-            accountNumber = "AC" + (1000000000L + random.nextInt(900000000));
+
+            accountNumber =
+                    "AC" + (1000000000L + random.nextInt(900000000));
+
         } while (accountRepository.existsByAccountNumber(accountNumber));
 
         return accountNumber;
@@ -85,13 +121,19 @@ public class AccountServiceImpl implements AccountService {
     private AccountResponse mapToResponse(Account account) {
 
         return new AccountResponse(
+
                 account.getId(),
+
                 account.getAccountNumber(),
+
                 account.getAccountType(),
+
                 account.getBalance(),
+
                 account.getStatus(),
-                account.getUser().getFirstName() + " " +
-                account.getUser().getLastName()
+
+                account.getUser().getFirstName() + " "
+                        + account.getUser().getLastName()
         );
     }
 }

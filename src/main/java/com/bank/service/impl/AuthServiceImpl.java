@@ -1,5 +1,7 @@
 package com.bank.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,6 +25,9 @@ import com.bank.service.AuthService;
 @Service
 public class AuthServiceImpl implements AuthService {
 
+    private static final Logger logger =
+            LoggerFactory.getLogger(AuthServiceImpl.class);
+
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
@@ -45,21 +50,33 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthResponse register(RegisterRequest request) {
 
-        // Check if email already exists
-    	if (userRepository.existsByEmail(request.getEmail())) {
-    	    throw new EmailAlreadyExistsException(request.getEmail());
-    	}
+        logger.info("Registration request received for email: {}",
+                request.getEmail());
 
-        // Check if phone already exists
-    	if (userRepository.existsByPhone(request.getPhone())) {
-    	    throw new PhoneAlreadyExistsException(request.getPhone());
-    	}
+        // Check duplicate email
+        if (userRepository.existsByEmail(request.getEmail())) {
+
+            logger.warn("Registration failed. Email already exists: {}",
+                    request.getEmail());
+
+            throw new EmailAlreadyExistsException(request.getEmail());
+        }
+
+        // Check duplicate phone
+        if (userRepository.existsByPhone(request.getPhone())) {
+
+            logger.warn("Registration failed. Phone already exists: {}",
+                    request.getPhone());
+
+            throw new PhoneAlreadyExistsException(request.getPhone());
+        }
 
         // Get CUSTOMER role
-    	Role customerRole = roleRepository.findByName(RoleType.CUSTOMER)
-    	        .orElseThrow(() ->
-    	                new RuntimeException("Default CUSTOMER role not found"));
-        // Create User
+        Role customerRole = roleRepository.findByName(RoleType.CUSTOMER)
+                .orElseThrow(() ->
+                        new RuntimeException("Default CUSTOMER role not found"));
+
+        // Create user
         User user = new User();
 
         user.setFirstName(request.getFirstName());
@@ -67,15 +84,13 @@ public class AuthServiceImpl implements AuthService {
         user.setEmail(request.getEmail());
         user.setPhone(request.getPhone());
         user.setGender(request.getGender());
-
-        // Encrypt Password
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-
         user.setRole(customerRole);
         user.setEnabled(true);
 
-        // Save User
         userRepository.save(user);
+
+        logger.info("User registered successfully: {}", user.getEmail());
 
         return new AuthResponse(null, "Registration Successful");
     }
@@ -83,20 +98,23 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthResponse login(LoginRequest request) {
 
-        // Authenticate User
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
+        logger.info("Login attempt for email: {}",
+                request.getEmail());
 
-        // Get Logged-in User
+        Authentication authentication =
+                authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(
+                                request.getEmail(),
+                                request.getPassword()));
+
         CustomUserDetails userDetails =
                 (CustomUserDetails) authentication.getPrincipal();
 
-        // Generate JWT
-        String token = jwtUtil.generateToken(userDetails.getUsername());
+        String token =
+                jwtUtil.generateToken(userDetails.getUsername());
+
+        logger.info("User logged in successfully: {}",
+                userDetails.getUsername());
 
         return new AuthResponse(token, "Login Successful");
     }
