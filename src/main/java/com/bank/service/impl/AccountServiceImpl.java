@@ -1,6 +1,7 @@
 package com.bank.service.impl;
 
 import java.math.BigDecimal;
+
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -20,6 +21,9 @@ import com.bank.repository.AccountRepository;
 import com.bank.repository.UserRepository;
 import com.bank.service.AccountService;
 import com.bank.util.SecurityUtil;
+
+import jakarta.annotation.PostConstruct;
+
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -117,6 +121,10 @@ public class AccountServiceImpl implements AccountService {
 
         return accountNumber;
     }
+    @PostConstruct
+    public void init() {
+        System.out.println("✅ AccountServiceImpl bean created");
+    }
 
     private AccountResponse mapToResponse(Account account) {
 
@@ -134,6 +142,8 @@ public class AccountServiceImpl implements AccountService {
 
                 account.getUser().getFirstName() + " "
                         + account.getUser().getLastName()
+                        
+                        
         );
     }
 }

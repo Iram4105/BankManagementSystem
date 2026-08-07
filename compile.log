@@ -1,0 +1,638 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.bank:bank-management-system >-------------------
+[INFO] Building BankManagementSystem 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ bank-management-system ---
+[INFO] Deleting C:\Users\lenovo\eclipse-workspace\BankManagementSystem\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bank-management-system ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ bank-management-system ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 66 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/SecurityConfig.java: C:\Users\lenovo\eclipse-workspace\BankManagementSystem\src\main\java\com\bank\security\SecurityConfig.java uses or overrides a deprecated API.
+[INFO] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/SecurityConfig.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/exception/GlobalExceptionHandler.java:[126,37] constructor ApiErrorResponse in class com.bank.dto.ApiErrorResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.time.LocalDateTime,int,java.lang.String,java.lang.String,java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[23,58] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[29,20] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[34,20] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[54,20] cannot find symbol
+  symbol:   method isEnabled()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[61,16] cannot find symbol
+  symbol:   method setAccountNumber(java.lang.String)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[62,39] cannot find symbol
+  symbol:   method getAccountType()
+  location: variable request of type com.bank.dto.AccountRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[63,16] cannot find symbol
+  symbol:   method setBalance(java.math.BigDecimal)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[64,16] cannot find symbol
+  symbol:   method setStatus(com.bank.enums.AccountStatus)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[65,16] cannot find symbol
+  symbol:   method setUser(com.bank.entity.User)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[71,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[72,21] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[102,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[143,24] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[144,34] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[141,24] cannot find symbol
+  symbol:   method getStatus()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[139,24] cannot find symbol
+  symbol:   method getBalance()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[137,24] cannot find symbol
+  symbol:   method getAccountType()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[135,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[133,24] cannot find symbol
+  symbol:   method getId()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[61,32] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[62,42] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[60,32] cannot find symbol
+  symbol:   method getStatus()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[59,32] cannot find symbol
+  symbol:   method getBalance()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[58,32] cannot find symbol
+  symbol:   method getAccountType()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[57,32] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[56,32] cannot find symbol
+  symbol:   method getId()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[64,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.bank.dto.AccountResponse>
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[78,16] cannot find symbol
+  symbol:   method setStatus(com.bank.enums.AccountStatus)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[82,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[96,16] cannot find symbol
+  symbol:   method setStatus(com.bank.enums.AccountStatus)
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[100,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[116,65] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[134,16] constructor DashboardResponse in class com.bank.dto.DashboardResponse cannot be applied to given types;
+  required: no arguments
+  found:    long,long,long
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[54,24] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[57,49] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[60,28] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[62,58] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[66,49] cannot find symbol
+  symbol:   method getPhone()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[69,28] cannot find symbol
+  symbol:   method getPhone()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[71,58] cannot find symbol
+  symbol:   method getPhone()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[82,34] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[83,33] cannot find symbol
+  symbol:   method getLastName()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[84,30] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[85,30] cannot find symbol
+  symbol:   method getPhone()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[86,31] cannot find symbol
+  symbol:   method getGender()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[87,56] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[88,13] cannot find symbol
+  symbol:   method setRole(com.bank.entity.Role)
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[89,13] cannot find symbol
+  symbol:   method setEnabled(boolean)
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[93,61] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[95,16] constructor AuthResponse in class com.bank.dto.AuthResponse cannot be applied to given types;
+  required: no arguments
+  found:    <nulltype>,java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[102,24] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[107,40] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[108,40] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[119,16] constructor AuthResponse in class com.bank.dto.AuthResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[68,21] cannot find symbol
+  symbol:   method getGender()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[67,21] cannot find symbol
+  symbol:   method getPhone()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[66,21] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[65,21] cannot find symbol
+  symbol:   method getLastName()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[64,21] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[87,34] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[88,33] cannot find symbol
+  symbol:   method getLastName()
+  location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[89,30] cannot find symbol
+  symbol:   method getPhone()
+  location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[100,21] cannot find symbol
+  symbol:   method getGender()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[99,21] cannot find symbol
+  symbol:   method getPhone()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[98,21] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[97,21] cannot find symbol
+  symbol:   method getLastName()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[96,21] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[120,24] cannot find symbol
+  symbol:   method getOldPassword()
+  location: variable request of type com.bank.dto.ChangePasswordRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[121,21] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[129,56] cannot find symbol
+  symbol:   method getNewPassword()
+  location: variable request of type com.bank.dto.ChangePasswordRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[186,36] cannot find symbol
+  symbol:   method getRemarks()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[185,36] cannot find symbol
+  symbol:   method getAccount()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[184,36] cannot find symbol
+  symbol:   method getTransactionDate()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[183,36] cannot find symbol
+  symbol:   method getAmount()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[182,36] cannot find symbol
+  symbol:   method getTransactionType()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[181,36] cannot find symbol
+  symbol:   method getTransactionNumber()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[189,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.bank.dto.TransactionResponse>
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[67,50] cannot find symbol
+  symbol:   method getTransactionNumber()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[70,50] cannot find symbol
+  symbol:   method getTransactionType()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[73,50] cannot find symbol
+  symbol:   method getAmount()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[76,50] cannot find symbol
+  symbol:   method getTransactionDate()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[79,50] cannot find symbol
+  symbol:   method getRemarks()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[92,38] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[94,38] cannot find symbol
+  symbol:   method getUser()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[98,38] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[102,38] cannot find symbol
+  symbol:   method getAccountType()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[106,38] cannot find symbol
+  symbol:   method getBalance()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[127,42] cannot find symbol
+  symbol:   method getTransactionNumber()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[130,36] cannot find symbol
+  symbol:   method getTransactionType()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[132,48] cannot find symbol
+  symbol:   method getAmount()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[135,36] cannot find symbol
+  symbol:   method getTransactionDate()
+  location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[50,24] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[51,24] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[52,31] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[55,45] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[57,61] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[60,35] cannot find symbol
+  symbol:   method getBalance()
+  location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[60,60] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[64,20] cannot find symbol
+  symbol:   method setTransactionNumber(java.lang.String)
+  location: variable transaction of type com.bank.entity.Transaction
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.154 s
+[INFO] Finished at: 2026-08-07T12:19:37+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.0:compile (default-compile) on project bank-management-system: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/exception/GlobalExceptionHandler.java:[126,37] constructor ApiErrorResponse in class com.bank.dto.ApiErrorResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.time.LocalDateTime,int,java.lang.String,java.lang.String,java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[23,58] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[29,20] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[34,20] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/security/CustomUserDetails.java:[54,20] cannot find symbol
+[ERROR]   symbol:   method isEnabled()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[61,16] cannot find symbol
+[ERROR]   symbol:   method setAccountNumber(java.lang.String)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[62,39] cannot find symbol
+[ERROR]   symbol:   method getAccountType()
+[ERROR]   location: variable request of type com.bank.dto.AccountRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[63,16] cannot find symbol
+[ERROR]   symbol:   method setBalance(java.math.BigDecimal)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[64,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.bank.enums.AccountStatus)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[65,16] cannot find symbol
+[ERROR]   symbol:   method setUser(com.bank.entity.User)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[71,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[72,21] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[102,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[143,24] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[144,34] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[141,24] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[139,24] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[137,24] cannot find symbol
+[ERROR]   symbol:   method getAccountType()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[135,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AccountServiceImpl.java:[133,24] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[61,32] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[62,42] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[60,32] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[59,32] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[58,32] cannot find symbol
+[ERROR]   symbol:   method getAccountType()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[57,32] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[56,32] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[64,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.bank.dto.AccountResponse>
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[78,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.bank.enums.AccountStatus)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[82,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[96,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.bank.enums.AccountStatus)
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[100,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[116,65] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AdminServiceImpl.java:[134,16] constructor DashboardResponse in class com.bank.dto.DashboardResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    long,long,long
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[54,24] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[57,49] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[60,28] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[62,58] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[66,49] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[69,28] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[71,58] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[82,34] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[83,33] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[84,30] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[85,30] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[86,31] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[87,56] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.bank.dto.RegisterRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[88,13] cannot find symbol
+[ERROR]   symbol:   method setRole(com.bank.entity.Role)
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[89,13] cannot find symbol
+[ERROR]   symbol:   method setEnabled(boolean)
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[93,61] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[95,16] constructor AuthResponse in class com.bank.dto.AuthResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    <nulltype>,java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[102,24] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[107,40] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[108,40] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.bank.dto.LoginRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/AuthServiceImpl.java:[119,16] constructor AuthResponse in class com.bank.dto.AuthResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[68,21] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[67,21] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[66,21] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[65,21] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[64,21] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[87,34] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[88,33] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[89,30] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable request of type com.bank.dto.UpdateProfileRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[100,21] cannot find symbol
+[ERROR]   symbol:   method getGender()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[99,21] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[98,21] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[97,21] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[96,21] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[120,24] cannot find symbol
+[ERROR]   symbol:   method getOldPassword()
+[ERROR]   location: variable request of type com.bank.dto.ChangePasswordRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[121,21] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.bank.entity.User
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[129,56] cannot find symbol
+[ERROR]   symbol:   method getNewPassword()
+[ERROR]   location: variable request of type com.bank.dto.ChangePasswordRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[186,36] cannot find symbol
+[ERROR]   symbol:   method getRemarks()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[185,36] cannot find symbol
+[ERROR]   symbol:   method getAccount()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[184,36] cannot find symbol
+[ERROR]   symbol:   method getTransactionDate()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[183,36] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[182,36] cannot find symbol
+[ERROR]   symbol:   method getTransactionType()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[181,36] cannot find symbol
+[ERROR]   symbol:   method getTransactionNumber()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/CustomerServiceImpl.java:[189,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.bank.dto.TransactionResponse>
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[67,50] cannot find symbol
+[ERROR]   symbol:   method getTransactionNumber()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[70,50] cannot find symbol
+[ERROR]   symbol:   method getTransactionType()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[73,50] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[76,50] cannot find symbol
+[ERROR]   symbol:   method getTransactionDate()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/ExcelServiceImpl.java:[79,50] cannot find symbol
+[ERROR]   symbol:   method getRemarks()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[92,38] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[94,38] cannot find symbol
+[ERROR]   symbol:   method getUser()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[98,38] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[102,38] cannot find symbol
+[ERROR]   symbol:   method getAccountType()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[106,38] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[127,42] cannot find symbol
+[ERROR]   symbol:   method getTransactionNumber()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[130,36] cannot find symbol
+[ERROR]   symbol:   method getTransactionType()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[132,48] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/PdfServiceImpl.java:[135,36] cannot find symbol
+[ERROR]   symbol:   method getTransactionDate()
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[50,24] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[51,24] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[52,31] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[55,45] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[57,61] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[60,35] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable account of type com.bank.entity.Account
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[60,60] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.bank.dto.TransactionRequest
+[ERROR] /C:/Users/lenovo/eclipse-workspace/BankManagementSystem/src/main/java/com/bank/service/impl/TransactionServiceImpl.java:[64,20] cannot find symbol
+[ERROR]   symbol:   method setTransactionNumber(java.lang.String)
+[ERROR]   location: variable transaction of type com.bank.entity.Transaction
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
